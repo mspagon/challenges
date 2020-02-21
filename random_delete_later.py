@@ -13,9 +13,6 @@ def count_competitors(reviews: list, competitors: list):
         for competitor in seen:
             competitors_count[competitor] += 1
 
-    # Removes competitor names if they were not mentioned at all.
-    for
-
     return sort_competitors(competitors_count)
 
 def sort_competitors(competitors_count: dict):
