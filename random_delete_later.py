@@ -27,7 +27,7 @@ def sort_competitors(competitors_count: dict):
     competitors = []
     for count, competitor in sorted(group_by_count.items(), reverse=True):
         if count > 0:
-            for name in sorted(acompetitor):
+            for name in sorted(competitor):
                 competitors.append(name)
     return competitors
 
