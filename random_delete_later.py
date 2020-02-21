@@ -13,6 +13,9 @@ def count_competitors(reviews: list, competitors: list):
         for competitor in seen:
             competitors_count[competitor] += 1
 
+    # Removes competitor names if they were not mentioned at all.
+    for
+
     return sort_competitors(competitors_count)
 
 def sort_competitors(competitors_count: dict):
@@ -22,9 +25,10 @@ def sort_competitors(competitors_count: dict):
         group_by_count[count].append(competitor)
 
     competitors = []
-    for _, competitor in sorted(group_by_count.items(), reverse=True):
-        for name in sorted(competitor):
-            competitors.append(name)
+    for count, competitor in sorted(group_by_count.items(), reverse=True):
+        if count > 0:
+            for name in sorted(acompetitor):
+                competitors.append(name)
     return competitors
 
 
@@ -44,7 +48,18 @@ def tests():
 
         assert(sort_competitors(competitors_count) == answer)
 
+    def _competitors_not_mentioned():
+        reviews = ['blah blah blah', 'bloo bloo bloo']
+        competitors = ['apple', 'samsung']
+        answer = []
+
+        try:
+            assert(count_competitors(reviews, competitors) == answer)
+        except:
+            print(count_competitors(reviews, competitors))
+
     _sort_competitors_simple()
+    _competitors_not_mentioned()
 
 
 def main():
@@ -64,3 +79,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
